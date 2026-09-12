@@ -1,0 +1,740 @@
+<!doctype html>
+<!-- Diego Ch4m4X GitHub Hub v1.0.5 -->
+<html lang="pt-BR" data-theme-key="diego-ch4m4x-theme">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07090f">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Diego Ch4m4X">
+  <title>Diego Ch4m4X | Projetos de Redes, Linux e Desenvolvimento</title>
+  <meta name="description" content="Hub técnico de Diego Ch4m4X com projetos, guias e ferramentas sobre redes, Linux, Git, Markdown, automação, desenvolvimento Full Stack, DevOps e NetDev.">
+  <link rel="canonical" href="https://diego-ch4m4x.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Diego Ch4m4X">
+  <meta property="og:title" content="Diego Ch4m4X | Projetos de Redes, Linux e Desenvolvimento">
+  <meta property="og:description" content="Hub técnico de Diego Ch4m4X com projetos, guias e ferramentas sobre redes, Linux, Git, Markdown, automação, desenvolvimento Full Stack, DevOps e NetDev.">
+  <meta property="og:url" content="https://diego-ch4m4x.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Diego Ch4m4X | Projetos de Redes, Linux e Desenvolvimento">
+  <meta name="twitter:description" content="Hub técnico de Diego Ch4m4X com projetos, guias e ferramentas sobre redes, Linux, Git, Markdown, automação, desenvolvimento Full Stack, DevOps e NetDev.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://diego-ch4m4x.github.io/#website","url":"https://diego-ch4m4x.github.io/","name":"Diego Ch4m4X","alternateName":"Ch4m4X","inLanguage":"pt-BR"},{"@type":"ProfilePage","@id":"https://diego-ch4m4x.github.io/#webpage","url":"https://diego-ch4m4x.github.io/","name":"Diego Ch4m4X | Projetos de Redes, Linux e Desenvolvimento","description":"Hub técnico de Diego Ch4m4X com projetos, guias e ferramentas sobre redes, Linux, Git, Markdown, automação, desenvolvimento Full Stack, DevOps e NetDev.","inLanguage":"pt-BR","isPartOf":{"@id":"https://diego-ch4m4x.github.io/#website"},"mainEntity":{"@id":"https://diego-ch4m4x.github.io/#person"}},{"@type":"Person","@id":"https://diego-ch4m4x.github.io/#person","name":"Diego Ch4m4X","url":"https://diego-ch4m4x.github.io/","sameAs":["https://github.com/Diego-Ch4m4X","https://www.linkedin.com/in/diegodsl"],"knowsAbout":["Telecomunicações","Redes de computadores","Linux","Automação","Desenvolvimento Full Stack","DevOps","NetDev","NetDevOps"]}]}</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2307090f%22%2F%3E%0A%3Cg%20transform%3D%22translate%288%208%29%20scale%282%29%22%20fill%3D%22none%22%20stroke%3D%22%23a28cff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%0A%3Cpath%20d%3D%22M4%2021v-1c0%20-3.31%202.69%20-6%206%20-6h4c3.31%200%206%202.69%206%206v1%22%2F%3E%0A%3Cpath%20d%3D%22M12%2011c-2.21%200%20-4%20-1.79%20-4%20-4c0%20-2.21%201.79%20-4%204%20-4c2.21%200%204%201.79%204%204c0%202.21%20-1.79%204%20-4%204Z%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E">
+  <script>(() => {
+  const root = document.documentElement;
+  const themeKey = root.dataset.themeKey;
+  let storedTheme = null;
+
+  try {
+    const value = localStorage.getItem(themeKey);
+    if (value === 'light' || value === 'dark') storedTheme = value;
+  } catch (_) {}
+
+  const systemTheme = window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  const theme = storedTheme ?? systemTheme;
+
+  root.dataset.theme = theme;
+  root.dataset.themeSource = storedTheme ? 'user' : 'system';
+  root.style.colorScheme = theme;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#f7f8fc' : '#07090f');
+})();</script>
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #07090f;
+  --bg-mid: #080b12;
+  --card: #0c101a;
+  --card-hover: #0d111c;
+  --text: #f5f7ff;
+  --muted: #b4bdd1;
+  --dim: #7f8aa5;
+  --line: rgba(255, 255, 255, .10);
+  --line-strong: rgba(255, 255, 255, .17);
+  --violet: #7c5cff;
+  --violet-soft: #a28cff;
+  --cyan: #43d8ff;
+  --green: #65f0a8;
+  --yellow: #ffd166;
+  --soft: rgba(255, 255, 255, .035);
+  --soft-hover: rgba(255, 255, 255, .07);
+  --grid: rgba(255, 255, 255, .025);
+  --header-bg: rgba(7, 9, 15, .64);
+  --header-solid: rgba(7, 9, 15, .90);
+  --footer-bg: rgba(4, 6, 10, .42);
+  --term-a: rgba(18, 23, 38, .96);
+  --term-b: rgba(9, 12, 20, .94);
+  --term-text: #cbd4e9;
+  --term-muted: #75819b;
+  --section-line: rgba(255, 255, 255, .055);
+  --focus: rgba(67, 216, 255, .72);
+  --shadow: 0 26px 80px rgba(0, 0, 0, .38);
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --page-max: 1180px;
+  --header-h: 76px;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7f8fc;
+  --bg-mid: #eef1f7;
+  --card: #ffffff;
+  --card-hover: #fbfbff;
+  --text: #141824;
+  --muted: #4f5a70;
+  --dim: #626d84;
+  --line: rgba(20, 24, 36, .10);
+  --line-strong: rgba(20, 24, 36, .17);
+  --violet: #6848e8;
+  --violet-soft: #6848e8;
+  --cyan: #00779d;
+  --green: #087f52;
+  --yellow: #9b6800;
+  --soft: rgba(20, 24, 36, .035);
+  --soft-hover: rgba(20, 24, 36, .075);
+  --grid: rgba(20, 24, 36, .035);
+  --header-bg: rgba(247, 248, 252, .72);
+  --header-solid: rgba(247, 248, 252, .94);
+  --footer-bg: rgba(238, 241, 247, .72);
+  --term-a: rgba(255, 255, 255, .98);
+  --term-b: rgba(246, 248, 252, .98);
+  --term-text: #2f3a50;
+  --term-muted: #667187;
+  --section-line: rgba(20, 24, 36, .07);
+  --shadow: 0 24px 70px rgba(58, 65, 86, .16);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% -10%, rgba(124, 92, 255, .20), transparent 30rem),
+    radial-gradient(circle at 92% 16%, rgba(67, 216, 255, .12), transparent 26rem),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-mid) 52%, var(--bg) 100%);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .2;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 72%);
+  mask-image: linear-gradient(to bottom, #000, transparent 72%);
+}
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+svg { display: block; }
+button { font: inherit; }
+h1, h2, h3, p { margin-top: 0; }
+
+.svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.container { width: min(calc(100% - 40px), var(--page-max)); margin-inline: auto; }
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  transform: translateY(-160%);
+  padding: .7rem 1rem;
+  border-radius: 10px;
+  color: #000;
+  background: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .18s ease;
+}
+.skip-link:focus { transform: none; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  border-bottom: 1px solid transparent;
+  background: var(--header-bg);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  transition: background .2s ease, border-color .2s ease;
+}
+.site-header.scrolled { border-color: var(--line); background: var(--header-solid); }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; min-width: 0; color: var(--text); font-weight: 900; letter-spacing: -.02em; text-decoration: none; }
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 11px;
+  color: var(--violet-soft);
+  background: linear-gradient(145deg, rgba(124, 92, 255, .24), rgba(67, 216, 255, .08));
+}
+.brand-mark svg { width: 21px; height: 21px; }
+.brand-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.nav-link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 14px;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+.nav-link:hover { color: var(--text); background: var(--soft-hover); }
+.icon-control {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 42px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  background: var(--soft);
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+button.icon-control { appearance: none; cursor: pointer; }
+.icon-control:hover { color: var(--text); border-color: var(--line-strong); background: var(--soft-hover); }
+.icon-control:active { transform: scale(.95); }
+.icon-control svg { width: 20px; height: 20px; }
+.theme-icon { display: grid; place-items: center; width: 24px; height: 24px; }
+.theme-icon svg { width: 22px; height: 22px; }
+
+.hero { position: relative; overflow: clip; padding: clamp(56px, 6vw, 88px) 0 clamp(64px, 6vw, 96px); }
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -230px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, .20), transparent 68%);
+  pointer-events: none;
+}
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .75fr); align-items: center; gap: clamp(36px, 5vw, 72px); }
+.eyebrow, .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  color: var(--violet-soft);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.eyebrow::before, .kicker::before { content: ""; width: 24px; height: 1px; background: currentColor; box-shadow: 0 0 16px currentColor; }
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(3.15rem, 5.6vw, 5.7rem);
+  line-height: .96;
+  letter-spacing: -.06em;
+  font-weight: 950;
+  white-space: nowrap;
+}
+.gradient {
+  color: transparent;
+  background: linear-gradient(90deg, #fff 10%, #b9a9ff 45%, #6ce6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+:root[data-theme="light"] .gradient { background-image: linear-gradient(90deg, #161b29 8%, #6848df 48%, #007fa8 100%); }
+.hero-copy { max-width: 680px; margin-bottom: 26px; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.18rem); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding-inline: 18px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  font-size: .94rem;
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.btn svg { width: 19px; height: 19px; flex: 0 0 19px; }
+.btn-primary { color: #fff; background: linear-gradient(135deg, var(--violet), #6749e8); box-shadow: 0 14px 38px rgba(124, 92, 255, .25); }
+.btn-secondary { border-color: var(--line-strong); background: var(--soft); }
+.btn-secondary:hover { background: var(--soft-hover); }
+
+.terminal-wrap { position: relative; min-width: 0; }
+.terminal-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 14% 7% -8%;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(124, 92, 255, .28), rgba(67, 216, 255, .13));
+  filter: blur(42px);
+}
+.terminal { overflow: hidden; border: 1px solid var(--line-strong); border-radius: 28px; background: linear-gradient(180deg, var(--term-a), var(--term-b)); box-shadow: var(--shadow); }
+.term-top { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 15px 18px; border-bottom: 1px solid var(--line); background: var(--soft); }
+.term-dots { display: flex; gap: 7px; flex: 0 0 auto; }
+.term-dot { width: 9px; height: 9px; border-radius: 50%; background: #ff6b6b; }
+.term-dot:nth-child(2) { background: var(--yellow); }
+.term-dot:nth-child(3) { background: var(--green); }
+.term-title { min-width: 0; overflow: hidden; color: var(--dim); font: 12px/1.35 var(--font-mono); text-overflow: ellipsis; white-space: nowrap; }
+.term-body { padding: 24px; overflow-wrap: anywhere; color: var(--term-text); font: clamp(.82rem, 1.5vw, .98rem)/1.85 var(--font-mono); }
+.prompt { color: var(--green); }
+.cmd { color: var(--text); }
+.key { color: var(--cyan); }
+.value { color: var(--violet-soft); }
+.muted { color: var(--term-muted); }
+
+.section { position: relative; padding: clamp(64px, 6vw, 92px) 0; }
+.section + .section { border-top: 1px solid var(--section-line); }
+.section-head { display: grid; gap: 12px; margin-bottom: 32px; }
+.section-head .intro { max-width: 720px; }
+.section-head h2, .about h2 { margin-bottom: 0; font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.02; letter-spacing: -.045em; }
+.intro { margin-bottom: 4px; color: var(--muted); font-size: 1.02rem; }
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card {
+  --glow: rgba(124, 92, 255, .16);
+  position: relative;
+  min-width: 0;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(22px, 2.4vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(145deg, var(--soft), transparent), var(--card);
+  box-shadow: inset 0 1px 0 var(--soft);
+  transition: transform .22s ease, border-color .22s ease, background .22s ease;
+}
+.card:nth-child(2) { --glow: rgba(67, 216, 255, .13); }
+.card:nth-child(3) { --glow: rgba(101, 240, 168, .10); }
+.card:nth-child(4) { --glow: rgba(255, 209, 102, .10); }
+.card::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: var(--glow);
+  filter: blur(8px);
+  pointer-events: none;
+  transition: transform .3s ease;
+}
+.meta { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 18px; margin-bottom: 36px; color: var(--dim); font-size: .78rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+.number { color: var(--violet-soft); font-family: var(--font-mono); }
+.project-title { position: relative; z-index: 1; min-width: 0; display: flex; align-items: center; gap: 13px; margin-bottom: 14px; font-size: clamp(1.45rem, 2.8vw, 2.15rem); line-height: 1.06; letter-spacing: -.035em; }
+.project-title > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.project-logo { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; color: var(--text); }
+.project-logo svg { width: 100%; height: 100%; }
+.project-description { position: relative; z-index: 1; max-width: 58ch; margin-bottom: 24px; color: var(--muted); }
+.project-description code { padding: .08em .28em; border: 1px solid var(--line); border-radius: 6px; color: var(--text); background: var(--soft); font: .86em var(--font-mono); }
+.card .actions { position: relative; z-index: 1; margin-top: auto; }
+.card .btn { min-height: 44px; font-size: .88rem; }
+
+.about-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
+.about p { max-width: 690px; color: var(--muted); font-size: clamp(1.02rem, 1.8vw, 1.18rem); }
+.about .lead { color: var(--text); font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.45; letter-spacing: -.02em; }
+.chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+.chip { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--soft); font-size: .78rem; font-weight: 800; }
+
+.site-footer { padding: 20px 0 22px; border-top: 1px solid var(--line); background: var(--footer-bg); }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.footer-copy { color: var(--dim); font-size: .85rem; }
+.footer-links { display: flex; gap: 9px; }
+
+.reveal-enabled .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+.reveal-enabled .reveal.show { opacity: 1; transform: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary:hover { box-shadow: 0 18px 44px rgba(124, 92, 255, .34); }
+  .card:hover { transform: translateY(-5px); border-color: rgba(156, 130, 255, .38); background: linear-gradient(145deg, var(--soft-hover), transparent), var(--card-hover); }
+  .card:hover::after { transform: scale(1.15); }
+  :root[data-theme="light"] .card:hover { border-color: rgba(104, 72, 232, .28); }
+}
+
+@media (max-width: 900px) {
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  .terminal-wrap { max-width: 680px; }
+}
+
+@media (max-width: 760px) {
+  :root { --header-h: 68px; }
+  .container { width: min(calc(100% - 28px), var(--page-max)); }
+  .nav-link { display: none; }
+  .projects { grid-template-columns: 1fr; }
+  .hero { padding-top: 52px; }
+  h1 { font-size: clamp(2.25rem, 11.2vw, 4rem); letter-spacing: -.055em; }
+  .term-body { padding: 20px; }
+  .card { min-height: 290px; }
+  .meta { margin-bottom: 30px; }
+  .project-title { gap: 11px; }
+  .project-logo { width: 30px; height: 30px; flex-basis: 30px; }
+  .footer-inner { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 420px) {
+  .actions { display: grid; grid-template-columns: 1fr; }
+  .btn { width: 100%; }
+  .hero { padding-bottom: 60px; }
+  .section { padding-block: 56px; }
+  .section-head h2, .about h2 { font-size: clamp(2rem, 12vw, 3.2rem); }
+  .card { min-height: 0; }
+  .meta { margin-bottom: 26px; }
+  .term-top { padding-inline: 14px; }
+  .term-body { padding: 17px; font-size: .78rem; }
+}
+
+@media (max-width: 340px) {
+  .brand-name { display: none; }
+  .header-inner { gap: 10px; }
+  h1 { font-size: clamp(2rem, 12vw, 2.55rem); white-space: normal; }
+  .eyebrow, .kicker { letter-spacing: .1em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .site-header, .nav-link, .icon-control, .btn, .card, .card::after, .reveal-enabled .reveal { transition: none; }
+  .reveal-enabled .reveal { opacity: 1; transform: none; }
+}
+  </style>
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+<symbol id="icon-user" viewBox="0 0 24 24">
+<path d="M0 0h24v24H0z" fill="none"></path>
+<g fill="none" stroke="currentColor" stroke-dasharray="28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
+<animate attributeName="stroke-dashoffset" dur="0.4s" fill="freeze" values="28;0"></animate>
+</path>
+<path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z" stroke-dashoffset="28">
+<animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.4s" fill="freeze" to="0"></animate>
+</path>
+</g>
+</symbol>
+<symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.22c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.28-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.75 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.71 5.39-5.29 5.68.42.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" fill="currentColor"></path></symbol>
+<symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M13.2 5.4 19.8 12l-6.6 6.6-1.4-1.4 4.2-4.2H4v-2h12l-4.2-4.2 1.4-1.4Z" fill="currentColor"></path></symbol>
+<symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M5.3 7.9H1.7V22h3.6V7.9ZM3.5 2A2.1 2.1 0 1 0 3.5 6.2 2.1 2.1 0 0 0 3.5 2ZM22.3 13.9c0-4.2-2.2-6.2-5.2-6.2-2.4 0-3.5 1.3-4.1 2.2v-2h-3.6V22H13v-7c0-1.8.3-3.6 2.6-3.6 2.2 0 2.3 2.1 2.3 3.7V22h3.6l.8-8.1Z" fill="currentColor"></path></symbol>
+<symbol id="logo-anotacoes" viewBox="0 0 24 24">
+<g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<path d="M22 3v14c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h14c.55 0 1 .45 1 1Z" fill="currentColor" fill-opacity=".3">
+<animate attributeName="d" dur=".4s" fill="freeze" values="M20 5v14c0 .55-.45 1-1 1H5c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h14c.55 0 1 .45 1 1Z;M22 3v14c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h14c.55 0 1 .45 1 1Z"></animate>
+</path>
+<path d="M10 6h8M10 10h8M10 14h5M2 6v15c0 .55.45 1 1 1h15" fill="none">
+<animate attributeName="d" dur=".4s" fill="freeze" values="M8 8h8M8 12h8M8 16h5M4 5v14c0 .55.45 1 1 1h14;M10 6h8M10 10h8M10 14h5M2 6v15c0 .55.45 1 1 1h15"></animate>
+</path>
+</g>
+</symbol>
+<symbol id="logo-git" viewBox="0 0 92 92">
+<path d="M90.156 41.965 50.036 1.848a5.918 5.918 0 0 0-8.372 0l-8.328 8.332 10.566 10.566a7.03 7.03 0 0 1 7.23 1.684 7.034 7.034 0 0 1 1.669 7.277l10.187 10.184a7.028 7.028 0 0 1 7.278 1.672 7.04 7.04 0 0 1 0 9.957 7.05 7.05 0 0 1-9.965 0 7.044 7.044 0 0 1-1.528-7.66l-9.5-9.497V59.36a7.04 7.04 0 0 1 1.86 11.29 7.04 7.04 0 0 1-9.957 0 7.04 7.04 0 0 1 0-9.958 7.06 7.06 0 0 1 2.304-1.539V33.926a7.049 7.049 0 0 1-3.82-9.234L29.242 14.272 1.73 41.777a5.925 5.925 0 0 0 0 8.371L41.852 90.27a5.925 5.925 0 0 0 8.37 0l39.934-39.934a5.925 5.925 0 0 0 0-8.371" fill="#f03c2e" fill-rule="nonzero"></path>
+</symbol>
+<symbol id="logo-markdown" viewBox="-10 -5 1034 1034">
+<path d="M922 319q-1 0-2 1h-11v0H73q-18 0-33.5 8.5T15 351q-17 26-13 57v461q1 18 11 32.5T37 923q25 14 55 10v1l843-1q18-1 32.5-11t22.5-24q14-24 10-55h1l-1-459q-1-17-11-31.5t-24-23.5q-19-10-42-11zM918 367h2q12 0 20 5q6 3 8.5 6.5t2.5 9.5l1 456v3q2 16-5 29q-3 5-6.5 7.5t-9.5 2.5l-840 1h-3q-16 2-28-5q-6-3-8.5-6.5T49 866V408l-1-4q-2-14 5.5-25T72 368h837zM145 464v327h96V603l96 120 96-120v188h96V464h-96l-96 120-96-120h-96zM697 464v168h-96l144 159 144-159h-96V464h-96z" fill="currentColor"></path>
+</symbol>
+<symbol id="logo-linux" viewBox="0 0 24 24">
+<path d="M12.642 8.084c-.364.189-.79.42-1.242.42s-.81-.209-1.066-.413c-.13-.101-.234-.202-.313-.276c-.137-.108-.12-.259-.064-.254c.094.012.108.136.168.191c.08.075.18.172.302.269c.243.192.567.38.973.38s.878-.238 1.167-.4c.163-.092.371-.256.541-.381c.13-.095.125-.21.232-.198c.107.013.028.127-.122.258a3.4 3.4 0 0 1-.576.404" fill="currentColor"></path>
+<path d="M19.649 17.77c-.142-.16-.209-.456-.281-.771s-.153-.654-.411-.874l-.002-.001a1 1 0 0 0-.317-.192c.359-1.065.219-2.126-.145-3.084c-.444-1.177-1.222-2.202-1.815-2.903c-.664-.838-1.313-1.633-1.301-2.808c.021-1.793.197-5.118-2.958-5.122a5 5 0 0 0-.401.017c-3.526.283-2.59 4.008-2.643 5.255c-.064.912-.249 1.631-.877 2.523c-.736.876-1.774 2.295-2.266 3.771c-.232.697-.342 1.407-.241 2.08a2 2 0 0 0-.091.089c-.216.231-.376.511-.555.699c-.166.167-.403.229-.664.323s-.547.231-.721.565l-.001.002a1 1 0 0 0-.108.484c0 .154.023.311.046.461c.048.313.097.609.032.81c-.206.564-.232.954-.087 1.237s.444.409.783.479c.676.141 1.592.106 2.314.489l.062-.117l-.061.118c.773.404 1.557.547 2.182.405c.454-.104.821-.374 1.011-.789c.489-.002 1.025-.209 1.885-.256c.583-.047 1.312.207 2.149.16a1 1 0 0 0 .099.264c.324.649.928.946 1.571.896s1.329-.43 1.883-1.089l-.102-.085l.102.084c.527-.64 1.403-.905 1.984-1.255c.29-.175.525-.395.544-.713c.018-.318-.169-.675-.599-1.152m-7.79-11.708c-.003-.234.036-.435.126-.639s.201-.351.358-.47s.312-.174.494-.176h.009c.179 0 .332.053.489.167c.159.116.274.261.366.463a1.5 1.5 0 0 1 .141.636c.002.235-.038.435-.127.639a1.2 1.2 0 0 1-.18.299l-.074-.033q-.133-.056-.237-.096c-.104-.04-.124-.044-.181-.064c.041-.049.122-.108.151-.181a1 1 0 0 0 .072-.347l.002-.016a1 1 0 0 0-.05-.337c-.038-.113-.086-.195-.155-.263s-.139-.099-.223-.101h-.011a.32.32 0 0 0-.217.086a.6.6 0 0 0-.174.25a1 1 0 0 0-.072.348l-.001.015a1 1 0 0 0 .014.2a2.5 2.5 0 0 0-.507-.171a2 2 0 0 1-.014-.19zm-2.144.052c-.012-.202.009-.376.064-.556s.13-.311.238-.418a.52.52 0 0 1 .349-.168h.03c.118 0 .225.04.335.127a1 1 0 0 1 .284.389c.076.171.116.343.127.545v.002a1.5 1.5 0 0 1-.002.243l-.068.021c-.128.044-.23.093-.328.158a1 1 0 0 0 .003-.214v-.012a1 1 0 0 0-.068-.274a.5.5 0 0 0-.138-.203c-.052-.044-.1-.065-.153-.064l-.017.001c-.061.005-.11.034-.157.092a.54.54 0 0 0-.101.223a.9.9 0 0 0-.019.293l.001.012c.01.103.031.189.067.275a.53.53 0 0 0 .166.224c-.059.045-.098.078-.146.113l-.11.081a1 1 0 0 1-.229-.342a1.5 1.5 0 0 1-.128-.546zm.155 1.228c.187-.14.315-.234.402-.298c.086-.063.121-.086.148-.112h.001c.14-.132.362-.374.699-.49c.115-.04.245-.065.39-.066c.275-.001.608.089 1.01.348c.247.16.439.174.882.363h.001c.213.087.338.202.399.321q.09.18.012.387c-.103.273-.429.562-.887.705h-.001c-.224.072-.418.233-.647.364a1.45 1.45 0 0 1-.842.217a1.1 1.1 0 0 1-.374-.083a1.2 1.2 0 0 1-.27-.167c-.161-.131-.303-.295-.51-.416h-.002c-.333-.19-.515-.408-.573-.598c-.057-.189-.003-.351.162-.475m.131 13.018c-.047.623-.398.961-.938 1.085c-.539.123-1.27 0-1.999-.381h-.001c-.808-.427-1.768-.385-2.384-.514c-.308-.064-.509-.161-.602-.341s-.094-.494.102-1.028l.001-.002l.001-.002c.097-.299.025-.626-.021-.934c-.047-.307-.07-.586.034-.781l.001-.002c.135-.259.332-.352.576-.439c.245-.088.534-.157.764-.386l.001-.001l.001-.001c.212-.223.371-.503.557-.702c.157-.167.314-.279.551-.28h.009q.061 0 .132.011c.314.047.588.268.853.625l.762 1.389h.001c.202.423.631.89.994 1.365c.362.475.644.952.607 1.317zm-.063-1.01a7 7 0 0 0-.333-.469a14 14 0 0 0-.229-.293q.227 0 .384-.072a.5.5 0 0 0 .266-.274c.09-.242 0-.583-.288-.973c-.29-.39-.778-.83-1.494-1.269c-.527-.328-.821-.729-.959-1.165s-.119-.907-.013-1.373c.204-.894.729-1.762 1.063-2.308c.09-.066.032.123-.339.811c-.332.629-.953 2.081-.103 3.214a6.7 6.7 0 0 1 .538-2.398c.472-1.067 1.456-2.919 1.534-4.395c.041.029.18.123.241.158c.182.106.316.262.492.403c.177.142.396.264.729.283l.093.003c.343 0 .61-.112.833-.239c.242-.138.436-.292.618-.351h.001c.387-.122.694-.335.869-.585c.302 1.186 1.001 2.897 1.45 3.733c.239.443.715 1.385.92 2.52q.195-.005.427.054c.537-1.393-.455-2.892-.909-3.31c-.184-.178-.192-.258-.102-.254c.492.436 1.139 1.311 1.374 2.3c.107.451.13.925.016 1.393q.084.034.171.076c.862.42 1.181.785 1.027 1.283q-.076-.002-.148 0h-.014c.125-.395-.151-.687-.889-1.02c-.764-.336-1.373-.303-1.476.379a1 1 0 0 0-.017.109q-.085.03-.172.076c-.358.197-.555.553-.664.99s-.14.964-.17 1.558c-.019.298-.141.702-.266 1.129c-1.249.897-2.986 1.283-4.461.276m9.628.057c-.524.317-1.456.593-2.05 1.313c-.517.615-1.146.952-1.7.996c-.555.044-1.033-.186-1.315-.752v-.001l-.001-.003c-.175-.333-.102-.858.045-1.412s.359-1.123.388-1.585v-.001c.03-.592.063-1.11.163-1.509s.256-.669.533-.821l.039-.02c.031.513.285 1.036.734 1.149c.491.129 1.199-.292 1.498-.636l.175-.007c.262-.006.481.009.707.205v.001h.001c.173.146.255.423.326.733s.128.647.342.888h.001c.41.456.542.764.531.96c-.011.198-.153.344-.417.502" fill="currentColor"></path>
+<path d="M11.738 6.762c.015.048.093.04.138.063c.04.02.071.065.116.066c.042.001.107-.015.113-.057c.008-.056-.073-.091-.126-.111c-.067-.026-.153-.039-.216-.004c-.014.008-.03.027-.025.043m-.46 0c-.016.048-.094.04-.139.063c-.039.02-.071.065-.115.066c-.042.001-.108-.015-.114-.057c-.007-.056.074-.091.126-.111c.067-.026.153-.039.217-.004c.015.008.03.027.025.043" fill="currentColor"></path>
+</symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Diego Ch4m4X — início">
+        <span class="brand-mark" aria-hidden="true"><svg><use href="#icon-user"/></svg></span>
+        <span class="brand-name">Diego Ch4m4X</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-link" href="#projetos">Projetos</a>
+        <a class="nav-link" href="#sobre">Sobre mim</a>
+        <button class="icon-control" id="theme-toggle" type="button" aria-label="Alternar tema">
+          <span class="theme-icon" id="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a class="icon-control" href="https://github.com/Diego-Ch4m4X" target="_blank" rel="me noopener noreferrer" aria-label="GitHub de Diego Ch4m4X">
+          <svg aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Hub técnico · GitHub Pages</p>
+          <h1 id="hero-title"><span class="gradient">Diego Ch4m4X</span></h1>
+          <p class="hero-copy">Projetos técnicos, guias e ferramentas sobre redes, Linux, Git, Markdown, automação e desenvolvimento.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projetos">Explorar projetos <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="https://github.com/Diego-Ch4m4X" target="_blank" rel="me noopener noreferrer"><svg aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
+          </div>
+        </div>
+
+        <div class="terminal-wrap reveal" aria-hidden="true" data-nosnippet>
+          <div class="terminal">
+            <div class="term-top">
+              <div class="term-dots"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+              <div class="term-title">~/diego-ch4m4x.github.io</div>
+            </div>
+            <div class="term-body">
+              <div><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+              <div><span class="value">Diego Ch4m4X</span></div>
+              <br>
+              <div><span class="prompt">$</span> <span class="cmd">ls</span> <span class="muted">./projetos</span></div>
+              <div><span class="key">01</span> ANOTAÇÕES</div>
+              <div><span class="key">02</span> GUIA_GIT</div>
+              <div><span class="key">03</span> GUIA_MARKDOWN</div>
+              <div><span class="key">04</span> LINUX_DISTRO_ADVISOR</div>
+              <br>
+              <div><span class="prompt">$</span> <span class="cmd">status</span></div>
+              <div><span class="muted">building · learning · documenting</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Projetos</p>
+            <h2 id="projetos-title">Conhecimento que vira projeto.</h2>
+          </div>
+          <p class="intro">Guias, ferramentas e experimentos publicados para consulta, prática e evolução contínua.</p>
+        </div>
+
+        <div class="projects">
+          <article class="card reveal">
+            <div class="meta"><span>Workspace local</span><span class="number">01</span></div>
+            <h3 class="project-title"><span class="project-logo" aria-hidden="true"><svg><use href="#logo-anotacoes"/></svg></span><span>ANOTAÇÕES</span></h3>
+            <p class="project-description">Workspace local-first que trabalha diretamente com arquivos <code>.txt</code> e <code>.md</code> da sua pasta, com árvore, abas, busca, editor/preview Markdown, personalização e backup JSON.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://diego-ch4m4x.github.io/ANOTACOES/" aria-label="Abrir projeto ANOTAÇÕES">Abrir ANOTAÇÕES</a>
+              <a class="btn btn-secondary" aria-label="Ver ANOTAÇÕES no GitHub" href="https://github.com/Diego-Ch4m4X/ANOTACOES" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="meta"><span>Git + GitHub</span><span class="number">02</span></div>
+            <h3 class="project-title"><span class="project-logo" aria-hidden="true"><svg><use href="#logo-git"/></svg></span><span>GUIA GIT</span></h3>
+            <p class="project-description">Guia técnico e prático de Git e GitHub, com comandos explicados, cenários reais, branches, conflitos, sincronização, recuperação e laboratórios para consolidar o uso no dia a dia.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://diego-ch4m4x.github.io/Guia_Git/" aria-label="Abrir projeto Guia Git">Abrir Guia Git</a>
+              <a class="btn btn-secondary" aria-label="Ver Guia Git no GitHub" href="https://github.com/Diego-Ch4m4X/Guia_Git" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="meta"><span>Markdown + Mermaid</span><span class="number">03</span></div>
+            <h3 class="project-title"><span class="project-logo" aria-hidden="true"><svg><use href="#logo-markdown"/></svg></span><span>GUIA MARKDOWN</span></h3>
+            <p class="project-description">Referência em português para Markdown com CommonMark, GFM, recursos do GitHub, Mermaid, Math/LaTeX, HTML, Front Matter e boas práticas de documentação técnica.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://diego-ch4m4x.github.io/guia-markdown-definitivo/" aria-label="Abrir projeto Guia Markdown">Abrir Guia Markdown</a>
+              <a class="btn btn-secondary" aria-label="Ver Guia Markdown no GitHub" href="https://github.com/Diego-Ch4m4X/guia-markdown-definitivo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="meta"><span>Linux · decisão técnica</span><span class="number">04</span></div>
+            <h3 class="project-title"><span class="project-logo" aria-hidden="true"><svg><use href="#logo-linux"/></svg></span><span>LINUX DISTRO ADVISOR</span></h3>
+            <p class="project-description">Guia técnico + quiz interativo para comparar distribuições Linux por workload, ciclo de vida, segurança, hardware e operação — escolhendo por requisitos verificáveis, não por hype.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://diego-ch4m4x.github.io/Linux_Distro_Advisor/" aria-label="Abrir projeto Linux Distro Advisor">Abrir Linux Distro Advisor</a>
+              <a class="btn btn-secondary" aria-label="Ver Linux Distro Advisor no GitHub" href="https://github.com/Diego-Ch4m4X/Linux_Distro_Advisor" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="kicker">Sobre mim</p>
+          <div class="about"><h2 id="sobre-title">Redes, software e evolução contínua.</h2></div>
+        </div>
+        <div class="about reveal">
+          <p class="lead">Telecomunicações, redes e tecnologia. Projetos, estudos e conhecimento técnico.</p>
+          <p>Atualmente amplio meus conhecimentos em programação, desenvolvimento Full Stack, automação e práticas DevOps para aproximar redes e software, com foco na evolução para NetDev e NetDevOps.</p>
+          <div class="chips" aria-label="Áreas de interesse">
+            <span class="chip">Telecom</span><span class="chip">Redes</span><span class="chip">Linux</span><span class="chip">Automação</span><span class="chip">Full Stack</span><span class="chip">DevOps</span><span class="chip">NetDev</span><span class="chip">NetDevOps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">© <span id="year">2026</span> Diego Ch4m4X · Projetos, estudos e conhecimento técnico.</div>
+      <div class="footer-links" aria-label="Links sociais">
+        <a class="icon-control" href="https://github.com/Diego-Ch4m4X" target="_blank" rel="me noopener noreferrer" aria-label="GitHub de Diego Ch4m4X"><svg aria-hidden="true"><use href="#icon-github"/></svg></a>
+        <a class="icon-control" href="https://www.linkedin.com/in/diegodsl" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn de Diego Ch4m4X"><svg aria-hidden="true"><use href="#icon-linkedin"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <template id="theme-icon-moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="currentColor" fill-opacity="0" stroke-dasharray="56" stroke-width="2" d="M7 6c0 6.08 4.92 11 11 11c0.53 0 1.05 -0.04 1.56 -0.11c-1.61 2.47 -4.39 4.11 -7.56 4.11c-4.97 0 -9 -4.03 -9 -9c0 -3.17 1.64 -5.95 4.11 -7.56c-0.07 0.51 -0.11 1.03 -0.11 1.56Z">
+      <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="56;0"/>
+      <animate fill="freeze" attributeName="fill-opacity" begin="0.7s" dur="0.15s" to=".3"/>
+    </path>
+    <g fill="none" stroke-dasharray="4" stroke-dashoffset="4">
+      <path d="M12 5h1.5M12 5h-1.5M12 5v1.5M12 5v-1.5"><animate attributeName="stroke-dashoffset" begin="0.95s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M17 11h1.5M17 11h-1.5M17 11v1.5M17 11v-1.5"><animate attributeName="stroke-dashoffset" begin="1.62s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M20 5h1.5M20 5h-1.5M20 5v1.5M20 5v-1.5"><animate attributeName="stroke-dashoffset" begin="2.29s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M12 4h1.5M12 4h-1.5M12 4v1.5M12 4v-1.5"><animate attributeName="stroke-dashoffset" begin="2.96s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M18 12h1.5M18 12h-1.5M18 12v1.5M18 12v-1.5"><animate attributeName="stroke-dashoffset" begin="3.63s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M19 4h1.5M19 4h-1.5M19 4v1.5M19 4v-1.5"><animate attributeName="stroke-dashoffset" begin="4.3s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M13 4h1.5M13 4h-1.5M13 4v1.5M13 4v-1.5"><animate attributeName="stroke-dashoffset" begin="4.97s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M19 11h1.5M19 11h-1.5M19 11v1.5M19 11v-1.5"><animate attributeName="stroke-dashoffset" begin="5.64s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+      <path d="M20 5h1.5M20 5h-1.5M20 5v1.5M20 5v-1.5"><animate attributeName="stroke-dashoffset" begin="6.31s" dur="6s" keyTimes="0;0.08;0.22;0.3;1" repeatCount="indefinite" values="4;0;0;4;4"/></path>
+    </g>
+  </g>
+</svg></template>
+  <template id="theme-icon-sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <defs>
+    <mask id="theme-sun-mask">
+      <path fill="#fff" d="M12 6c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z">
+        <animate fill="freeze" attributeName="d" dur="0.4s" values="M12 2c5.52 0 10 4.48 10 10c0 5.52 -4.48 10 -10 10c-5.52 0 -10 -4.48 -10 -10c0 -5.52 4.48 -10 10 -10Z;M12 6c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z"/>
+      </path>
+      <path d="M22 -4c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z">
+        <animate fill="freeze" attributeName="d" dur="0.4s" values="M18 -4c5.52 0 10 4.48 10 10c0 5.52 -4.48 10 -10 10c-5.52 0 -10 -4.48 -10 -10c0 -5.52 4.48 -10 10 -10Z;M22 -4c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z"/>
+        <set fill="freeze" attributeName="opacity" begin="0.4s" to="0"/>
+      </path>
+    </mask>
+  </defs>
+  <path fill="currentColor" d="M0 0h24v24H0z" mask="url(#theme-sun-mask)"/>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M12 21v1M21 12h1M12 3v-1M3 12h-1" opacity="0">
+      <animateTransform attributeName="transform" dur="30s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/>
+      <set fill="freeze" attributeName="opacity" begin="0.4s" to="1"/>
+      <animate fill="freeze" attributeName="d" begin="0.4s" dur="0.2s" values="M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1"/>
+    </path>
+    <path d="M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5" opacity="0">
+      <animateTransform attributeName="transform" dur="30s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/>
+      <set fill="freeze" attributeName="opacity" begin="0.6s" to="1"/>
+      <animate fill="freeze" attributeName="d" begin="0.6s" dur="0.2s" values="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"/>
+    </path>
+  </g>
+</svg></template>
+
+  <script>(() => {
+  const root = document.documentElement;
+  const header = document.querySelector('.site-header');
+  const year = document.getElementById('year');
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const themeKey = root.dataset.themeKey;
+  const lightQuery = window.matchMedia?.('(prefers-color-scheme: light)') ?? null;
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)') ?? null;
+
+  const renderThemeIcon = (theme) => {
+    if (!themeToggle || !themeIcon) return;
+
+    const isDark = theme === 'dark';
+    const template = document.getElementById(isDark ? 'theme-icon-sun' : 'theme-icon-moon');
+    if (template instanceof HTMLTemplateElement) {
+      themeIcon.replaceChildren(template.content.cloneNode(true));
+    }
+
+    const label = isDark ? 'Ativar tema claro' : 'Ativar tema escuro';
+    themeToggle.setAttribute('aria-label', label);
+    themeToggle.setAttribute('title', label);
+  };
+
+  const applyTheme = (theme, persist = false) => {
+    const normalizedTheme = theme === 'light' ? 'light' : 'dark';
+    root.dataset.theme = normalizedTheme;
+    root.style.colorScheme = normalizedTheme;
+    themeMeta?.setAttribute('content', normalizedTheme === 'light' ? '#f7f8fc' : '#07090f');
+    renderThemeIcon(normalizedTheme);
+
+    if (persist) {
+      root.dataset.themeSource = 'user';
+      try { localStorage.setItem(themeKey, normalizedTheme); } catch (_) {}
+    }
+  };
+
+  applyTheme(root.dataset.theme, false);
+
+  themeToggle?.addEventListener('click', () => {
+    applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  });
+
+  if (lightQuery) {
+    const syncSystemTheme = (event) => {
+      if (root.dataset.themeSource === 'system') {
+        applyTheme(event.matches ? 'light' : 'dark', false);
+      }
+    };
+
+    if (typeof lightQuery.addEventListener === 'function') {
+      lightQuery.addEventListener('change', syncSystemTheme);
+    } else if (typeof lightQuery.addListener === 'function') {
+      lightQuery.addListener(syncSystemTheme);
+    }
+  }
+
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  const syncHeader = () => header?.classList.toggle('scrolled', window.scrollY > 10);
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion?.matches) {
+    try {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      }, { threshold: .12, rootMargin: '0px 0px -30px 0px' });
+
+      root.classList.add('reveal-enabled');
+      reveals.forEach((element) => observer.observe(element));
+      window.setTimeout(() => reveals.forEach((element) => element.classList.add('show')), 1800);
+    } catch (_) {
+      root.classList.remove('reveal-enabled');
+    }
+  }
+})();</script>
+</body>
+</html>
