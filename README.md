@@ -19,6 +19,8 @@ O conteúdo reúne temas ligados a **telecomunicações, redes, Linux, automaç�
 | **GUIA GIT** | Guia técnico e prático de Git e GitHub, com comandos explicados, cenários reais, branches, conflitos, sincronização, recuperação e laboratórios. | [Abrir guia](https://diego-ch4m4x.github.io/Guia_Git/) · [GitHub](https://github.com/Diego-Ch4m4X/Guia_Git) |
 | **GUIA MARKDOWN** | Referência em português para Markdown, incluindo CommonMark, GFM, GitHub, Mermaid, Math/LaTeX, HTML, Front Matter e boas práticas de documentação técnica. | [Abrir guia](https://diego-ch4m4x.github.io/guia-markdown-definitivo/) · [GitHub](https://github.com/Diego-Ch4m4X/guia-markdown-definitivo) |
 | **LINUX DISTRO ADVISOR** | Guia técnico e quiz interativo para comparar distribuições Linux por workload, ciclo de vida, segurança, hardware e operação, com foco em critérios verificáveis. | [Abrir projeto](https://diego-ch4m4x.github.io/Linux_Distro_Advisor/) · [GitHub](https://github.com/Diego-Ch4m4X/Linux_Distro_Advisor) |
+| **DEPLOYOFFICEXML** | Gerador técnico, local e auditável de `configuration.xml` para Office LTSC 2024, Project LTSC 2024 e Visio LTSC 2024 com o Office Deployment Tool. | [Abrir projeto](https://diego-ch4m4x.github.io/DeployOfficeXML/) · [GitHub](https://github.com/Diego-Ch4m4X/DeployOfficeXML) |
+| **GUIA LÓGICA** | Coleção progressiva de 35 tópicos sobre lógica, fundamentos de programação, algoritmos e estruturas de dados, com exemplos em Python, JavaScript, Java e Shell/GNU Bash. | [Abrir guia](https://diego-ch4m4x.github.io/Guia_Logica/) · [GitHub](https://github.com/Diego-Ch4m4X/Guia_Logica) |
 
   
 
